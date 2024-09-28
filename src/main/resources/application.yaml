@@ -1,0 +1,19 @@
+server:
+  port: 8091
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: clientServiceLab
+          uri: http://app-clientservice:8189
+          predicates:
+            - Path=/inDocker/api/main/**
+        - id: userServiceLab
+          uri: http://app-userservice:8191
+          predicates:
+            - Path=/app/v1/user/**
+        - id: billServiceLab
+          uri: http://app-billservice:8190
+          predicates:
+            - Path=/api/users/**
