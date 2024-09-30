@@ -16,4 +16,4 @@ spring:
         - id: billServiceLab
           uri: http://app-billservice:8190
           predicates:
-            - Path=/api/users/**
+            - Path=/app/v1/account/**
